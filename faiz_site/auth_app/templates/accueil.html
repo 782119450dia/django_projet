@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Gestion des Groupes de Tontine</title>
+    <style>
+        /* Réinitialisation des styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Utilisation de la police de caractères Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        /* Style pour le corps de la page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: hsl(128, 55%, 56%);;
+            color: #333;
+        }
+
+        /* Style pour la classe container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style pour le titre h2 */
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Style pour le bouton de déconnexion */
+        button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Style pour le bouton de déconnexion au survol */
+        button:hover {
+            background-color: #c82333;
+        }
+
+        /* Style pour le lien dans le bouton */
+        button a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container home">
+        <h2>Bienvenue ::: {{ user.username}}!</h2>
+        <button><a href="{% url 'deconnexion'%}">Déconnexion</a></button>
+    </div> 
+
+</body>
+</html>

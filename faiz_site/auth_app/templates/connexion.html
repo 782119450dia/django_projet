@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Utilisateurs</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>Connexion</h1>
+            {% if messages %}
+            <div class="error-messages">
+                {% for message in messages %}
+                <p class="error">{{message}}</p>
+                {% endfor %}
+
+            </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'connexion'%}">
+                {% csrf_token %}
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" name="username" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <p class="link" >pas encore inscrit ? <a href="{% url 'inscription'%}">S'inscrire</a></p>
+
+        </div>
+
+    </div>
+    <style>
+             /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Reset CSS */
+@import url(https://user.oc-static.com/upload/2022/11/10/16680790259578_P2C3-linear.png); 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #8ee609;
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Form styles */
+.form {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #09e6bd; /* couleur du fond du formulaire */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ombre légère */
+}
+
+/* Title styles */
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333; /* couleur du titre */
+}
+
+/* Error messages styles */
+.error-messages {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: rgb(187, 81, 81); /* couleur du texte d'erreur */
+  margin-bottom: 5px;
+}
+
+/* Input field styles */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* couleur de la bordure */
+  border-radius: 4px;
+}
+
+/* Button styles */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* couleur du bouton */
+  color: #fff; /* couleur du texte du bouton */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* couleur du bouton au survol */
+}
+
+/* Link styles */
+.link {
+  margin-top: 15px;
+  color: #333; /* couleur du texte du lien */
+}
+
+.link a {
+  color: #007bff; /* couleur du lien */
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</body>
+</html>

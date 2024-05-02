@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités d'Inscription</title>
+    <style>
+        /*Import Google font - poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #001bff; /* couleur de fond */
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff; /* couleur du conteneur */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ombre légère */
+        }
+
+        /* Form styles */
+        .form {
+            text-align: center;
+        }
+
+        /* Title styles */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333; /* couleur du titre */
+        }
+
+        /* Input field styles */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc; /* couleur de la bordure */
+            border-radius: 4px;
+        }
+
+        /* Button styles */
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #00952f; /* couleur du bouton */
+            color: #fff; /* couleur du texte du bouton */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #007a26;; /* couleur du bouton au survol */
+        }
+
+        /* Link styles */
+        .link {
+            margin-top: 15px;
+            color: #333; /* couleur du texte du lien */
+        }
+
+        .link a {
+            color: #007bff; /* couleur du lien */
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="background-color: #d5d5ce98;">Système d'Authentification Gestion d'Utilisateur</h2>
+        <div class="form">
+            <form method="post" action="{% url 'inscription' %}">
+                {% csrf_token %}
+                <h1>Inscription</h1>
+                {{ form.as_p }}
+                <button type="submit">S'inscrire</button>
+            </form>
+            <p class="link">Déjà inscrit ? <a href="{% url 'connexion' %}">Se connecter</a></p>
+        </div>
+    </div>
+</body>
+</html>
